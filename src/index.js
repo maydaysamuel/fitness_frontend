@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import { Route, BrowserRouter, Routes, useNavigate } from 'react-router-dom';
+import './style.css'
 import {
     Navbar,
     Routines,
+    Activities,
     Profile,
     Register,
     Login,
@@ -11,12 +13,19 @@ import {
 } from './components';
 
 const App = () => {
+    const [token, setToken] = useState('');
+    const [user, setUser] = useState({});
+    const navigate = useNavigate()
+    
+    
+    
     return (
         <div>
             <Navbar />
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/routines' element={<Routines />} />
+                <Route path='/activities' element={<Activities />} />
                 <Route path='/profile' element={<Profile />} />
                 <Route path='/register' element={<Register />} />
                 <Route path='/login' element={<Login />} />
