@@ -1,12 +1,38 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import {
+    Navbar,
+    Routines,
+    Profile,
+    Register,
+    Login,
+    Home
+} from './components';
 
 const App = () => {
-
-    
+    return (
+        <div>
+            <Navbar />
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/routines' element={<Routines />} />
+                <Route path='/profile' element={<Profile />} />
+                <Route path='/register' element={<Register />} />
+                <Route path='/login' element={<Login />} />
+            </Routes>
+        </div>
+    )
 }
 
-ReactDOM.render(<App />, document.getElementById("app"))
+// ReactDOM.render(<App />, document.getElementById("app"))
+const container = document.querySelector('#app')
+const root = ReactDOM.createRoot(container);
+root.render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+);
 
 /*
 User:
