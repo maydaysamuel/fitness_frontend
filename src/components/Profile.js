@@ -1,8 +1,19 @@
 import React from "react";
 
-const Profile = () => {
+const Profile = ({ user }) => {
     return (
-        <h1>Profile</h1>
+        <>
+        <div>
+            <div className='user-routines'>
+                {
+                    
+
+                }
+
+
+            </div>
+        </div>
+        </>
     )
 }
 

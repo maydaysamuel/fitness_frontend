@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Route, BrowserRouter, Routes, useNavigate } from 'react-router-dom';
-import './style.css'
+// import './style.css'
 import {
     Navbar,
     Routines,
@@ -16,8 +16,6 @@ const App = () => {
     const [token, setToken] = useState('');
     const [user, setUser] = useState({});
     const navigate = useNavigate()
-    
-    
     
     return (
         <div>

@@ -20,15 +20,15 @@ const Login = ({ setToken, navigate }) => {
     
     return (
         <>
+        <h1>Login</h1>
         <div className='login'>
             <form onSubmit={(event) => {
                 event.preventDefault();
                 handleSubmit();
             }}>
-                <input type='text' onChange={(event) => setUsername(event.target.value)}>Username</input>
-                <input type='password' onChange={(event) => setPassword(event.target.value)}>Password</input>
-
-
+                <input type='text' value='Username' onChange={(event) => setUsername(event.target.value)} />
+                <input type='text' value='Password' onChange={(event) => setPassword(event.target.value)} />
+                <button type='submit'>Login</button>
             </form>
 
         </div></>
