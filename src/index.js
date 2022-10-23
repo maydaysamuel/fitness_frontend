@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Route, BrowserRouter, Routes, useNavigate } from 'react-router-dom';
-import './style.css'
+// import './style.css'
 import {
     Navbar,
     Routines,
@@ -12,19 +12,33 @@ import {
     Home
 } from './components';
 
+import { 
+    getRoutines 
+} from './api';
+
+
 const App = () => {
     const [token, setToken] = useState('');
     const [user, setUser] = useState({});
+    const [routines, setRoutines] = useState([]);
     const navigate = useNavigate()
+
     
-    
+    async function fetchRoutines() {
+        const results = await getRoutines()
+        setRoutines(results)
+    }
+
+    useEffect(() => {
+        fetchRoutines()
+    }, [])
     
     return (
         <div>
             <Navbar />
             <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path='/routines' element={<Routines />} />
+                <Route path='/routines' element={<Routines routines={routines} />} />
                 <Route path='/activities' element={<Activities />} />
                 <Route path='/profile' element={<Profile />} />
                 <Route path='/register' element={<Register />} />

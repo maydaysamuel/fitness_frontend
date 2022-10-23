@@ -1,5 +1,7 @@
 const baseURL = 'https://fitnesstrac-kr.herokuapp.com/api'
 
+
+//USERS
 export const registerUser = async (username, password) => {
     try {
         const response = await fetch(`${baseURL}/users/register`, {
@@ -54,6 +56,38 @@ export const getUserDetails = async (token) => {
         return result;
     } catch(error) {
         console.log('could not get users details')
+    }
+}
+
+
+export const getUserRoutines = async () => {
+    try{
+        const response = await fetch(`${baseURL}/users/${username}/routines`, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        const result = await response.json();
+        return result;
+    } catch(error) {
+        console.log('error getting user routines')
+    }
+}
+
+
+
+//ROUTINES
+export const getRoutines = async () => {
+    try {
+        const response = await fetch(`${baseURL}/routines`, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        const result = await response.json();
+        return result;
+    } catch(error) {
+        console.log('error getting routines')
     }
 }
 
