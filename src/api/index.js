@@ -1,5 +1,7 @@
 const baseURL = 'https://fitnesstrac-kr.herokuapp.com/api'
 
+
+//USERS
 export const registerUser = async (username, password) => {
     try {
         const response = await fetch(`${baseURL}/users/register`, {
@@ -188,18 +190,34 @@ export const updateRoutine = async ({name, goal, isPublic}) => {
     }
 }
 
-export const deleteRoutine = async (token) => {
-    try {
-        const response = await fetch(`${baseURL}/routines:routineId`, {
-            method: 'DELETE',
+export const getUserRoutines = async () => {
+    try{
+        const response = await fetch(`${baseURL}/users/${username}/routines`, {
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            }
+            },
         })
-        const result = await response.json()
-        return result
-    } catch (error) {
-        console.log('Error deleting post')
+        const result = await response.json();
+        return result;
+    } catch(error) {
+        console.log('error getting user routines')
     }
 }
+
+
+
+//ROUTINES
+export const getRoutines = async () => {
+    try {
+        const response = await fetch(`${baseURL}/routines`, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        const result = await response.json();
+        return result;
+    } catch(error) {
+        console.log('error getting routines')
+    }
+}
+

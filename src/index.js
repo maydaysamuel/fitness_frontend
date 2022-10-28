@@ -12,17 +12,26 @@ import {
     Home
 } from './components';
 
+import { 
+    getRoutines 
+} from './api';
+
+
 const App = () => {
     const [token, setToken] = useState('');
     const [user, setUser] = useState({});
+    const [routines, setRoutines] = useState([]);
     const navigate = useNavigate()
+
+    
+    
     
     return (
         <div>
             <Navbar />
             <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path='/routines' element={<Routines />} />
+                <Route path='/routines' element={<Routines routines={routines} />} />
                 <Route path='/activities' element={<Activities />} />
                 <Route path='/profile' element={<Profile />} />
                 <Route path='/register' element={<Register />} />

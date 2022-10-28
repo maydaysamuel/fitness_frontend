@@ -1,8 +1,24 @@
 import React from "react";
 
-const Routines = () => {
+const Routines = ({ routines }) => {
+    //isPublic, name, goal, creatorName
+
     return (
-        <h1>Routines</h1>
+        <div>
+            {
+                routines.map((routine) => {
+                    const {goal, creatorName, name} = routine;
+                    return (
+                        <>
+                        <h3>{name}</h3>
+                        <p>Creator Name: {creatorName}</p>
+                        <p>Goal: {goal}</p>
+                        </>
+
+                    )
+                })
+            }
+        </div>
     )
 }
 
