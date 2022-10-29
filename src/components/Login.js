@@ -25,8 +25,8 @@ const Login = ({ setToken, navigate }) => {
                 event.preventDefault();
                 handleSubmit();
             }}>
-                <input type='text' value='username' onChange={(event) => setUsername(event.target.value)}></input>
-                <input type='password' value='password' onChange={(event) => setPassword(event.target.value)}></input>
+                <input type='text' placeholder='Username' onChange={(event) => setUsername(event.target.value)}></input>
+                <input type='password' placeholder='Password' onChange={(event) => setPassword(event.target.value)}></input>
 
 
             </form>

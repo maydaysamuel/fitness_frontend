@@ -23,6 +23,8 @@ const App = () => {
     const [routines, setRoutines] = useState([]);
     const navigate = useNavigate()
 
+    console.log(token)
+
     
     async function fetchRoutines() {
         const results = await getRoutines()
@@ -37,12 +39,40 @@ const App = () => {
         <div>
             <Navbar />
             <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/routines' element={<Routines routines={routines} />} />
-                <Route path='/activities' element={<Activities />} />
-                <Route path='/profile' element={<Profile />} />
-                <Route path='/register' element={<Register />} />
-                <Route path='/login' element={<Login />} />
+                <Route 
+                    path='/' 
+                    element={<Home 
+                    />} 
+                />
+                <Route 
+                    path='/routines' 
+                    element={<Routines 
+                    routines={routines} 
+                    />} 
+                />
+                <Route 
+                    path='/activities' 
+                    element={<Activities 
+                    />} 
+                />
+                <Route 
+                    path='/profile' 
+                    element={<Profile 
+                    />} 
+                />
+                <Route 
+                    path='/register' 
+                    element={<Register 
+                    setToken={setToken}
+                    token={token}
+                    navigate={navigate}
+                    />} 
+                />
+                <Route 
+                    path='/login' 
+                    element={<Login 
+                    />} 
+                />
             </Routes>
         </div>
     )
