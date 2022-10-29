@@ -20,6 +20,7 @@ const Login = ({ setToken, navigate }) => {
     
     return (
         <>
+        <h1>Login</h1>
         <div className='login'>
             <form onSubmit={(event) => {
                 event.preventDefault();

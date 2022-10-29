@@ -26,14 +26,7 @@ const App = () => {
     console.log(token)
 
     
-    async function fetchRoutines() {
-        const results = await getRoutines()
-        setRoutines(results)
-    }
-
-    useEffect(() => {
-        fetchRoutines()
-    }, [])
+    
     
     return (
         <div>
