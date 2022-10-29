@@ -31,7 +31,7 @@ const App = () => {
             <Navbar />
             <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path='/routines' element={<Routines routines={routines} />} />
+                <Route path='/routines' element={<Routines routines={Routines} />} />
                 <Route path='/activities' element={<Activities />} />
                 <Route path='/profile' element={<Profile />} />
                 <Route path='/register' element={<Register />} />
