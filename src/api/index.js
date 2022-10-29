@@ -59,21 +59,6 @@ export const getUserDetails = async (token) => {
     }
 }
 
-export const getUserRoutines = async (token) => {
-    try {
-        const response = await fetch(`${baseURL}/users/:username/routines`, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-        })
-        const result = await response.json();
-        return result;
-    } catch (error) {
-        console.log('Could not get user routines')
-    }
-}
-
 export const getAllActivities = async () => {
     try {
         const response = await fetch(`${baseURL}/activities`, {
