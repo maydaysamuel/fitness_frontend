@@ -74,6 +74,8 @@ const App = () => {
                 <Route 
                     path='/login' 
                     element={<Login 
+                    setToken={setToken}
+                    navigate={navigate}
                     />} 
                 />
             </Routes>

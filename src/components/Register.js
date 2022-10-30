@@ -34,7 +34,7 @@ const Register = ({ setToken, navigate }) => {
                 placeholder='Enter Password'
                 onChange={(event) => setPassword(event.target.value)}
             />
-            <button type='submit'>Submit</button>
+            <button type='submit'>Register</button>
         </form>
     )
 }
