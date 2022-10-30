@@ -59,8 +59,7 @@ export const getAllActivities = async () => {
     try {
         const response = await fetch(`${baseURL}/activities`, {
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Content-Type': 'application/json'
             },
         })
         const result = await response.json();

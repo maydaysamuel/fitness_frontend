@@ -13,7 +13,8 @@ import {
 } from './components';
 
 import { 
-    getRoutines 
+    getAllActivities,
+    getRoutines
 } from './api';
 
 
@@ -21,17 +22,32 @@ const App = () => {
     const [token, setToken] = useState('');
     const [user, setUser] = useState({});
     const [routines, setRoutines] = useState([]);
+    const [activities, setActivities] = useState([]);
     const navigate = useNavigate();
 
     console.log(token)
+
+    function logout() {
+        window.localStorage.removeItem('token')
+        setToken('');
+    }
 
     async function fetchRoutines() {
         const results = await getRoutines()
         setRoutines(results)
     }
 
+    async function fetchActivities() {
+        const results = await getAllActivities()
+        setActivities(results)
+    }
+
     useEffect(() => {
         fetchRoutines()
+    }, [])
+
+    useEffect(() => {
+        fetchActivities()
     }, [])
     
     
@@ -39,7 +55,7 @@ const App = () => {
     return (
         <div>
             <Navbar 
-                setToken={setToken}
+                logout={logout}
             />
             <Routes>
                 <Route 
@@ -56,6 +72,7 @@ const App = () => {
                 <Route 
                     path='/activities' 
                     element={<Activities 
+                    activities={activities}
                     />} 
                 />
                 <Route 

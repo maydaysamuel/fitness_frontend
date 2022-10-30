@@ -1,8 +1,23 @@
 import React from "react";
 
-const Activities = () => {
+const Activities = ({ activities }) => {
+    console.log(activities)
+
     return (
-        <h1>Activities</h1>
+        <div>
+            {
+                activities.map((activity) => {
+                    const {description, name, id} = activity;
+                    return (
+                        <div key={id}>
+                        <h3>{name}</h3>
+                        <p>Description: {description}</p>
+                        </div>
+
+                    )
+                })
+            }
+        </div>
     )
 }
 
