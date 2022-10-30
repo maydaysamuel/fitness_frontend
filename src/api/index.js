@@ -4,7 +4,6 @@ const baseURL = 'https://fitnesstrac-kr.herokuapp.com/api'
 //USERS
 export const registerUser = async (username, password) => {
     try {
-        console.log(username, password)
         const response = await fetch(`${baseURL}/users/register`, {
             method: "POST",
             headers: {
@@ -16,7 +15,6 @@ export const registerUser = async (username, password) => {
             })
         })
         const result = await response.json();
-        console.log(result)
         return result;
     } catch (error) {
         console.log('error registering user')

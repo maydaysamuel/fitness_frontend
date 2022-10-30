@@ -6,7 +6,7 @@ const Profile = ({ user }) => {
         <div>
             <div className='user-routines'>
                 {
-                    
+                
 
                 }
 

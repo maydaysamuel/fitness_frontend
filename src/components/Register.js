@@ -1,15 +1,22 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
 import { registerUser } from "../api";
 
-const Register = ({ setToken }) => {
+const Register = ({ setToken, navigate }) => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = async () => {
         const results = await registerUser(username, password);
+        console.log(results)
+        if (results) {
             setToken(results.token);
+            window.localStorage.setItem('token', results.token);
+            navigate('/profile')
+            console.log(results.message)
+        } else {
+            console.log(results.error.name.message)
+        }
     }
 
     return (

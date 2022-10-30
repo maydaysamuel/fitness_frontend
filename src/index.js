@@ -21,16 +21,26 @@ const App = () => {
     const [token, setToken] = useState('');
     const [user, setUser] = useState({});
     const [routines, setRoutines] = useState([]);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     console.log(token)
 
+    async function fetchRoutines() {
+        const results = await getRoutines()
+        setRoutines(results)
+    }
+
+    useEffect(() => {
+        fetchRoutines()
+    }, [])
     
     
     
     return (
         <div>
-            <Navbar />
+            <Navbar 
+                setToken={setToken}
+            />
             <Routes>
                 <Route 
                     path='/' 

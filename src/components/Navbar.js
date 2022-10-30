@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ setToken }) => {
     return (
         <header>
             <nav>
@@ -11,6 +11,11 @@ const Navbar = () => {
                 <Link to='/profile'>Profile</Link>
                 <Link to='/register'>Register</Link>
                 <Link to='/login'>Login</Link>
+                <Link to='/' 
+                    onClick={() => {
+                        window.localStorage.removeItem('token')
+                        setToken('');
+                    }}>Logout</Link>
             </nav>
         </header>
     )
