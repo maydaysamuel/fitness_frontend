@@ -78,10 +78,8 @@ export const createActivity = async (token, { name, description }) => {
                 'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify({
-                activity: {
                     name,
                     description
-                }
             })
         })
         const result = await response.json();

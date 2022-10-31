@@ -1,5 +1,4 @@
 //routine (name, goal, isPublic)
-import { Input } from '@mui/material';
 import React, { useState } from 'react';
 import { createRoutine as addRoutine } from '../api';
 

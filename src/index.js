@@ -11,7 +11,8 @@ import {
     Register,
     Login,
     Home,
-    CreateRoutine
+    CreateRoutine,
+    CreateActivity
 } from './components';
 
 import { 
@@ -58,6 +59,7 @@ const App = () => {
         <div>
             <Navbar 
                 logout={logout}
+                token={token}
             />
             <Routes>
                 <Route 
@@ -84,6 +86,14 @@ const App = () => {
                     element={<Activities 
                     activities={activities}
                     />} 
+                />
+                <Route 
+                    path='/activities/create-activity'
+                    element={<CreateActivity
+                        token={token}
+                        fetchActivities={fetchActivities}
+                        navigate={navigate}
+                    />}
                 />
                 <Route 
                     path='/profile' 
@@ -123,20 +133,15 @@ root.render(
 
 /*
 User:
--POST /api/users/register
--POST /api/users/login
 -GET /api/users/me
 -GET /api/users/:username/routines
 
 Activities:
--GET /api/activities
 -POST /api/activities (*)
 -PATCH /api/activities/:activityId (*)
 -GET /api/activities/:activityId/routines
 
 Routines:
--GET /api/routines
--POST /api/routines (*)
 -PATCH /api/routines/:routineId (**)
 -DELETE /api/routines/:routineId (**)
 -POST /api/routines/:routineId/activities
