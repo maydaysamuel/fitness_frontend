@@ -25,9 +25,9 @@ const Routines = ({ routines, token }) => {
                 token ? (
                     <>
                     <h1>Routines</h1>
-                    <button>
-                        <Link to='/routines/create-routine'>Create a New Routine</Link>
-                    </button>
+                    <Button style={buttonStyle} variant="contained" href='/routines/create-routine'>
+            <Link to='/routines/create-routine' style={linkStyle}>Create a new Routine</Link>
+            </Button>
                     </>
                 ) : (
                     <h1>Routines</h1>
