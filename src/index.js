@@ -57,6 +57,7 @@ const App = () => {
         <div>
             <Navbar 
                 logout={logout}
+                token={token}
             />
             <Routes>
                 <Route 
