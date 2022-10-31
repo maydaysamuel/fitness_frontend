@@ -10,7 +10,7 @@ const CreateRoutine = ({ token, fetchRoutines, navigate }) => {
         name: initName,
         goal: initGoal
     }
-    
+
     async function handleSubmit() {
         
 
@@ -30,7 +30,7 @@ const CreateRoutine = ({ token, fetchRoutines, navigate }) => {
                 ev.preventDefault();
                 handleSubmit();
             }}>
-                <h1>Create A New Routine</h1>
+                <h1 className='create-routine'>Create A New Routine</h1>
 
                 <input
                     type='text'

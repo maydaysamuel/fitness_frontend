@@ -4,6 +4,7 @@
 }
 
 nav {
+    margin-bottom: 1rem;
     background-color: #134611;
     height: 2.5rem;
 }
@@ -16,4 +17,10 @@ nav {
 .home-desc {
     font-family: 'Libre Franklin', sans-serif;
     font-style: italic;
+}
+
+h3 {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 2rem;
+    text-transform: capitalize;
 }

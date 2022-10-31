@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-const Navbar = ({ logout, token, token }) => {
+const Navbar = ({ logout, token}) => {
 
     const linkStyle = {
         margin: '1.5rem',
