@@ -128,23 +128,22 @@ export const getAllRoutines = async () => {
 
 export const createRoutine = async (token, {name, goal, isPublic}) => {
     try {
-        const response = await featch(`${baseURL}/routines`, {
+        const response = await fetch(`${baseURL}/routines`, {
+            method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify({
-            routine: {
                 name,
                 goal,
                 isPublic
-            }
             })
         })
         const result = await response.json()
         return result;
     } catch (error) {
-        console.log('Error creating routine')
+        console.log(error.message)
     }
 }
 

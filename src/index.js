@@ -9,7 +9,8 @@ import {
     Profile,
     Register,
     Login,
-    Home
+    Home,
+    CreateRoutine
 } from './components';
 
 import { 
@@ -68,6 +69,14 @@ const App = () => {
                     element={<Routines 
                     routines={routines} 
                     />} 
+                />
+                <Route
+                    path='/routines/create-routine'
+                    element={<CreateRoutine
+                        token={token}
+                        fetchRoutines={fetchRoutines}
+                        navigate={navigate}    
+                    />}
                 />
                 <Route 
                     path='/activities' 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const Routines = ({ routines }) => {
     //isPublic, name, goal, creatorName
@@ -6,6 +7,9 @@ const Routines = ({ routines }) => {
 
     return (
         <div>
+            <button>
+                <Link to='/routines/create-routine'>Create a New Routine</Link>
+            </button>
             {
                 routines.map((routine) => {
                     const {goal, creatorName, name, id} = routine;

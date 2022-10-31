@@ -24,6 +24,7 @@ const Register = ({ setToken, navigate }) => {
             event.preventDefault();
             handleSubmit();
         }}>
+            <h1>Sign Up</h1>
             <input
                 type='text'
                 placeholder='Enter Username'
