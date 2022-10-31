@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
 
-const Routines = ({ routines }) => {
+const Routines = ({ routines, token }) => {
     //isPublic, name, goal, creatorName
     console.log(routines)
 
@@ -20,9 +20,21 @@ const Routines = ({ routines }) => {
     }
 
     return (
-        <div><Button style={buttonStyle} variant="contained" href='/routines/create-routine'>
-            <Link to='/routines/create-routine' style={linkStyle}>Create a new Routine</Link>
-            </Button>
+        <div>
+            {
+                token ? (
+                    <>
+                    <h1>Routines</h1>
+                    <button>
+                        <Link to='/routines/create-routine'>Create a New Routine</Link>
+                    </button>
+                    </>
+                ) : (
+                    <h1>Routines</h1>
+                )
+            }
+
+
             {
                 routines.map((routine) => {
                     const { goal, creatorName, name, id } = routine;
