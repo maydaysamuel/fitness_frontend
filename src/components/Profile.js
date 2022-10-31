@@ -1,6 +1,6 @@
 import React from "react";
 
-const Profile = ({ user }) => {
+const Profile = ({ user, token }) => {
     return (
         <>
         <div>
