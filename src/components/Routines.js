@@ -24,13 +24,13 @@ const Routines = ({ routines, token }) => {
             {
                 token ? (
                     <>
-                    <h1>Routines</h1>
+                    <h2 className='desc'>Routines</h2>
                     <Button style={buttonStyle} variant="contained" href='/routines/create-routine'>
             <Link to='/routines/create-routine' style={linkStyle}>Create a new Routine</Link>
             </Button>
                     </>
                 ) : (
-                    <h1>Routines</h1>
+                    <h2 className='desc'>Routines</h2>
                 )
             }
 

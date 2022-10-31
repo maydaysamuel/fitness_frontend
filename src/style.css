@@ -14,9 +14,11 @@ nav {
     font-size: 6rem;
 }
 
-.home-desc {
+.desc {
     font-family: 'Libre Franklin', sans-serif;
     font-style: italic;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 h3 {
