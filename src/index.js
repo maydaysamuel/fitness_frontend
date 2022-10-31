@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Route, BrowserRouter, Routes, useNavigate } from 'react-router-dom';
-// import './style.css'
+import CssBaseline from '@mui/material/CssBaseline';
+import './style.css'
 import {
     Navbar,
     Routines,
@@ -113,9 +114,11 @@ const App = () => {
 const container = document.querySelector('#app')
 const root = ReactDOM.createRoot(container);
 root.render(
+    <CssBaseline>
     <BrowserRouter>
         <App />
     </BrowserRouter>
+    </CssBaseline>
 );
 
 /*
