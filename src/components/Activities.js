@@ -1,10 +1,14 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const Activities = ({ activities }) => {
     console.log(activities)
 
     return (
         <div>
+            <button>
+                <Link to='/activities/create-activity'>Create a New Activity</Link>
+            </button>
             {
                 activities.map((activity) => {
                     const {description, name, id} = activity;
