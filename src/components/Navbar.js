@@ -14,21 +14,21 @@ const Navbar = ({ logout, token, token }) => {
     return (
         <header>
             <nav>
-                <Link to='/'>Home</Link>
-                <Link to='/routines'>Routines</Link>
-                <Link to='/activities'>Activities</Link>
+                <Link to='/' style={linkStyle}>Home</Link>
+                <Link to='/routines' style={linkStyle}>Routines</Link>
+                <Link to='/activities' style={linkStyle}>Activities</Link>
 
                 {
                     token ? (
                         <>
-                            <Link to='/profile'>Profile</Link>
-                            <Link to='/' onClick={() => logout()}>Logout</Link>
+                            <Link to='/profile' style={linkStyle}>Profile</Link>
+                            <Link to='/' style={linkStyle} onClick={() => logout()}>Logout</Link>
                         </>
 
                     ) : (
                         <>
-                            <Link to='/register'>Register</Link>
-                            <Link to='/login'>Login</Link>
+                            <Link to='/register' style={linkStyle}>Register</Link>
+                            <Link to='/login' style={linkStyle}>Login</Link>
                         </>
                     )
 
