@@ -70,6 +70,7 @@ const App = () => {
                     path='/routines' 
                     element={<Routines 
                     routines={routines} 
+                    token={token}
                     />} 
                 />
                 <Route
@@ -84,6 +85,7 @@ const App = () => {
                     path='/activities' 
                     element={<Activities 
                     activities={activities}
+                    token={token}
                     />} 
                 />
                 <Route 
